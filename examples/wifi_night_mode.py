@@ -1,10 +1,13 @@
 import os
+import sys
 import time
 
+sys.path.append(os.getcwd())
 from compal import Compal, WifiSettings
 
 modem = Compal(os.environ['router_IP'], os.environ['router_ACCESS'])
 modem.login()
+
 # restore_wifi_settings(modem)
 wifi = WifiSettings(modem)
 wifi.turn_off()
